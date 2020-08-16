@@ -1,0 +1,25 @@
+# MIT License
+# 
+# action.yml
+# 
+# Copyright (c) 2020 冬ノ夜空
+# 
+
+name: Github Action for LaTeX
+
+inputs:
+  element_files:
+    required: true
+  compiler:
+    default: latexmk
+  args:
+    default: "-cd -r ./.latexmkrc -f -gg"
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.element_files }}
+    - ${{ inputs.compiler }}
+    - ${{ inputs.args }}
+  
