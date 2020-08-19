@@ -5,7 +5,7 @@
 # Copyright (c) 2020 冬ノ夜空
 # 
 
-FROM snoworld/swd-mklatex:latest
+FROM snoworld/swd-texlive-full:latest
 
 COPY [".latexmkrc", "Makefile", "entrypoint.sh", "/"]
 
